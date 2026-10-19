@@ -82,6 +82,51 @@ public class MainApplication {
             return;
         }
     }
+    
+    //----------PART 2 --- QUICK CHAT MENU--- ------------//
+    System.out.println("Welcome to Quickchat.");
+    
+    boolean running = true;
+    int totalMessageSent = 0;
+    
+    while (running) {
+        System.out.println("QUICKCHAT MENU");
+        System.out.println("1- Send Message");
+        System.out.println("2- Show recently sent messages");
+        System.out.println("3- Quit");
+        System.out.println("Choose an option");
+        
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline 
+        
+        if (choice == 1 ) {
+            System.out.print("How many messages wpould you like to enter?");
+            int numMessages = scanner.nextInt();
+            scanner.nextLine();
+            
+            Message msgFeature = new Message();
+            
+            for (int i = 0; i < numMessages; i++) {
+                System.out.println("\n--- Entering Message " = (i + 1) + "of" + numMessage + "---");
+                
+                System.out.print("Enter the recipient cell number: ");
+                String recipient = scanner.nextLine();
+                if (!msgFeature.checkRecipientCell(recipient)) {
+                    System.out.println("Cell phone number is incorrectly formatted "
+                            + "or does not contain an international code."
+                            + "Please make sure you have typed in the number correctly and try again.");
+                    i--; // Re-try message iteration
+                    continue;
+                }
+                
+                
+                
+            }
+        }
+        
+    }
+    
+    
     }
 }
     

@@ -44,7 +44,13 @@ public class Message {
                }
            }
     
-    
+    //Generate a random 10 digit message ID 
+           public String generateMessageID
+                   public String generateMessageID() {
+                       Random rand = new Random();
+                       long id = 1000000000L + rand.nextLong(9000000000L);
+                       return String.valueOf(id);
+                   }
     
     
 }
