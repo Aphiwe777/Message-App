@@ -27,11 +27,6 @@ public class Message {
     public boolean checkRecipientCell(String cellNumber) {
         return cellNumber != null && cellNumber.startsWith("+") && cellNumber.length() >= 10;
     }
-    
-    
-    
-    
-    
     // MESSAGE HASH (First two sums of ID)
     public String createMessageHash(String messageID, int messageNumber, String messageText) {
         String idPrefix = (messageID != null && messageID.length() >= 2) ? messageID.substring(0, 2) + "00" : "";
