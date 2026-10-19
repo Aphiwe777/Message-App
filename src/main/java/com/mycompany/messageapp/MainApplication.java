@@ -146,7 +146,7 @@ public class MainApplication {
                         totalMessagesSent++;
                     }
 
-                    // Display summary in required rubric order[cite: 5]
+                    // Display summary 
                     System.out.println("\n[Message Details Summary]");
                     System.out.println("Message ID: " + messageID);
                     System.out.println("Message Hash: " + messageHash);
