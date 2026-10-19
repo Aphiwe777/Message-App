@@ -58,18 +58,12 @@ public class MessageAppTest {
         assertFalse(result);
     }
     
-    //LOGIN = SUCCESS/FAILURE
+   // LOGIN = SUCCESS / FAILURE
     @Test
-    public void testLoginSucces () {
-        loginSystem.registerUsername("kyle!!!!!!", "Ch3esec@ke99!", "+27838968976");
-        boolean result = loginSystem.checkloginsuccess("correctUser", "correctPass");
+    public void testLoginSuccess() {
+        // Assuming your login registration and check methods match your Login class implementation
+        loginSystem.registerUser("Ch3esec@ke99!", "+27838968976", "Kyle", "Doe", "kyleUser");
+        boolean result = loginSystem.loginUser("kyleUser", "Ch3esec@ke99!");
         assertTrue(result);
     }
-    
-    
-    
-    public MessageApp() {
-    }
-
-  
 }

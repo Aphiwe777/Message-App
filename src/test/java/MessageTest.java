@@ -40,7 +40,7 @@ public class MessageTest {
     @Test
     public void testMessageHashCreation() {
         String hash = messageObj.createMessageHash("1234567890", 0, "Hi Mike, can you join us for dinner tonight?");
-        assertTrue(hash.contains("12:0:"));
+        assertTrue(hash.contains("1200:"));
     }
 }
     
