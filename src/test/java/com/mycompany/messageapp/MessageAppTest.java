@@ -61,7 +61,7 @@ public class MessageAppTest {
     //LOGIN = SUCCESS/FAILURE
     @Test
     public void testLoginSucces () {
-        loginSystem.registerUser("kyle!!!!!!", "Ch3esec@ke99!", "+27838968976");
+        loginSystem.registerUsername("kyle!!!!!!", "Ch3esec@ke99!", "+27838968976");
         boolean result = loginSystem.checkloginsuccess("correctUser", "correctPass");
         assertTrue(result);
     }
@@ -71,8 +71,5 @@ public class MessageAppTest {
     public MessageApp() {
     }
 
-    @Test
-    public void testSomeMethod() {
-    }
-    
+  
 }
