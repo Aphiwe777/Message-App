@@ -6,11 +6,6 @@ package com.mycompany.messageapp;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Student
- */
-
 public class MainApplication {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -28,11 +23,11 @@ public class MainApplication {
         String lastName = scanner.nextLine();
         
         // Prompt user for a username and make sure it is properly formatted
-        String Username;
+        String username;
         while (true) {
             System.out.println("Enter username (Must contain: 1. '_' underscore, 2. five characters long):");
-            Username = scanner.nextLine(); 
-            if (loginSystem.checkUserName(Username)) {
+            username = scanner.nextLine(); 
+            if (loginSystem.checkUserName(username)) {
                 System.out.println("Username successfully captured.");
                 break; // Exit loop once valid
             } else {
@@ -49,7 +44,7 @@ public class MainApplication {
                     + "3. number, "
                     + "4. a special character");
             password = scanner.nextLine();
-            if (loginSystem.checkPasswordComplexity(password)) {
+            if (checkPasswordComplexity(password)) {
                 System.out.println("Password successfully captured");
                 break; // Exit password loop once valid
             } else {
@@ -61,7 +56,7 @@ public class MainApplication {
         String phoneNumber = scanner.nextLine();
         
         // Registration execution
-        String registrationResult = loginSystem.registerUser(password, phoneNumber, firstName, lastName, Username);
+        String registrationResult = loginSystem.registerUser(password, phoneNumber, firstName, lastName, username);
         System.out.println("\n" + registrationResult + "\n");
         
         // Login sequence
@@ -89,7 +84,7 @@ public class MainApplication {
         int totalMessageSent = 0;
         
         while (running) {
-            System.out.println("QUICKCHAT MENU");
+            System.out.println("\nQUICKCHAT MENU");
             System.out.println("1 - Send Message");
             System.out.println("2 - Show recently sent messages");
             System.out.println("3 - Quit");
@@ -164,5 +159,28 @@ public class MainApplication {
             }
         }
     }
-}
 
+    // Helper method placed correctly outside of main() but inside MainApplication class
+    public static boolean checkPasswordComplexity(String password) {
+        boolean hasUpper = false;
+        boolean hasNum = false;
+        boolean hasSpecial = false;
+
+        if (password.length() < 8) {
+            return false;
+        }
+
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                hasUpper = true;
+            } else if (Character.isDigit(ch)) {
+                hasNum = true;
+            } else if (!Character.isLetterOrDigit(ch)) {
+                hasSpecial = true;
+            }
+        }
+
+        return hasUpper && hasNum && hasSpecial;
+    }
+}
