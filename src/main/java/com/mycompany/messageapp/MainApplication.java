@@ -132,9 +132,40 @@ public class MainApplication {
                     
                 }
                 
+                String messageID = msgFeature.generateMessageID();
+                String messageHash = msgFeature.createMessageHash(messageID, i, messageText);
                 
+                System.out.println("Choose action: 1 1-Send Message, 2-Disregard Message, 3-Store Message ");
+                int actionChoice = scanner.nextInt();
+                scanner.nextLine();
                 
+                String actionResult = msgFeature.sendMessage(actionChoice);
+                    System.out.println(actionResult);
+
+                    if (actionChoice == 1) {
+                        totalMessagesSent++;
+                    }
+
+                    // Display summary in required rubric order[cite: 5]
+                    System.out.println("\n[Message Details Summary]");
+                    System.out.println("Message ID: " + messageID);
+                    System.out.println("Message Hash: " + messageHash);
+                    System.out.println("Recipient: " + recipient);
+                    System.out.println("Message: " + messageText);
+                }
+
+                System.out.println("\nTotal messages sent / processed: " + totalMessageSent);
+
+            } else if (choice == 2) {
+                System.out.println("Coming Soon.");
+            } else if (choice == 3) {
+                System.out.println("Exiting application. Goodbye!");
+                running = false;
+            } else {
+                System.out.println("Invalid option. Please select 1, 2, or 3.");
+            }
                 
+    }   
                 
             }
         }
