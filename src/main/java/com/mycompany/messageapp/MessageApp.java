@@ -21,9 +21,9 @@ public class MessageApp {
         private String lastName;
         
         //Constructors to initialize
-        public LoginFeature() {
+        public MessageApp() {
         }
-        public LoginFeature(String firstame, String lastName) {
+        public MessageApp(String firstame, String lastName) {
             this.firstName = firstName;
             this.lastName = lastName; 
         }
