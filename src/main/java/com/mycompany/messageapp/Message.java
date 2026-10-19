@@ -19,4 +19,32 @@ public class Message {
     public boolean checkMessageLength(String message) {
     return message != null && message.length() <=250;
     }
+    
+    //MESSAGE HASH (First two sums of ID)
+    public String createMessageHash(String messageID, int messageNumber, String messageText) {
+    String idPrefix = (messageID != null && messageID.length() >= 2) ? messageID.substring(0, 2) "00";
+    
+    String firstWord = "" ;
+    String lastWord = "" ;
+    if (messageText != null && !messageText.trim().isEmpty()) {
+        String[] words = message.Text.trim().split("\\s+"); 
+        firstWord = words[0].replaceAll("[a-zA-Z]","");
+    }
+           //SEND/ STORE/ DISREARD MESSAGES 
+           public String sendMessage (int choice) {
+               switch (choice) {
+                   case 1 : 
+                       return "Message successfully sent";
+                   case 2 : 
+                       return "Press 0 to delete the message";
+                   case 3 : 
+                       return "Message successfully stored";
+                   default : 
+                       return "Invalid choice";
+               }
+           }
+    
+    
+    
+    
 }
