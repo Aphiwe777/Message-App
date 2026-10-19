@@ -119,6 +119,21 @@ public class MainApplication {
                     continue;
                 }
                 
+                System.out.println("Enter message  (MAX-250 characters): ");
+                String messageText = scanner.nextLine();
+                
+                if (!msgFeature.checkMessageLength(messageText)) {
+                    int excess = messageText.length() - 250;
+                    System.out.println("Please enter a message of less than 250 characters. (Exceeds by " + excess + ")");
+                    i--; //Re-try message iteration 
+                    continue; 
+                } else {
+                    System.out.println("Message is ready to send.");
+                    
+                }
+                
+                
+                
                 
                 
             }
