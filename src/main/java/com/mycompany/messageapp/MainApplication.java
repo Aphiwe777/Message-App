@@ -28,11 +28,11 @@ public class MainApplication {
         String lastName = scanner.nextLine();
         
         // Prompt user for a username and make sure it is properly formatted
-        String username;
+        String Username;
         while (true) {
             System.out.println("Enter username (Must contain: 1. '_' underscore, 2. five characters long):");
-            username = scanner.nextLine(); 
-            if (loginSystem.checkUserName(username)) {
+            Username = scanner.nextLine(); 
+            if (loginSystem.checkUserName(Username)) {
                 System.out.println("Username successfully captured.");
                 break; // Exit loop once valid
             } else {
@@ -61,7 +61,7 @@ public class MainApplication {
         String phoneNumber = scanner.nextLine();
         
         // Registration execution
-        String registrationResult = loginSystem.registerUser(password, phoneNumber, firstName, lastName, username);
+        String registrationResult = loginSystem.registerUser(password, phoneNumber, firstName, lastName, Username);
         System.out.println("\n" + registrationResult + "\n");
         
         // Login sequence
