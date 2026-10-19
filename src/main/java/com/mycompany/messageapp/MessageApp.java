@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class MessageApp {
 
     
-        private String registeredUsername;
+        private String registeredUserName;
         private String registeredPassword;
         private String registeredphoneNumber;
         private String firstName;

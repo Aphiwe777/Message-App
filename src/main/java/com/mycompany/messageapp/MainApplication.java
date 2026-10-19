@@ -89,7 +89,7 @@ public class MainApplication {
         int totalMessageSent = 0;
         
         while (running) {
-            System.out.println("\nQUICKCHAT MENU");
+            System.out.println("QUICKCHAT MENU");
             System.out.println("1 - Send Message");
             System.out.println("2 - Show recently sent messages");
             System.out.println("3 - Quit");

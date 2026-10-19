@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MessageAppTest {
     
-    
     MessageApp loginSystem = new MessageApp();
     
     //USERNAME accurately formatted = true
