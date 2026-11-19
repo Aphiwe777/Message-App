@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.mycompany.messageapp.MessageAppTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.105 s <<< FAILURE! -- in com.mycompany.messageapp.MessageAppTest
+com.mycompany.messageapp.MessageAppTest.testLoginSuccess -- Time elapsed: 0.033 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "this.registeredUsername" is null
+	at com.mycompany.messageapp.MessageApp.loginUser(MessageApp.java:87)
+	at com.mycompany.messageapp.MessageAppTest.testLoginSuccess(MessageAppTest.java:65)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
