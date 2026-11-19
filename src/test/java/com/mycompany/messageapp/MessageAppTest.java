@@ -7,11 +7,7 @@ package com.mycompany.messageapp;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Unit tests for registration, authentication, and validation in MessageApp.
- *
- * @author Student
- */
+
 public class MessageAppTest {
 
     private final MessageApp loginSystem = new MessageApp();

@@ -7,10 +7,7 @@ package com.mycompany.messageapp;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-/**
- *
- * @author Student
- */
+
 public class MessageApp {
 
     
