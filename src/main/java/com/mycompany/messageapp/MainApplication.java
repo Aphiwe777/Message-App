@@ -144,19 +144,74 @@ public class MainApplication {
                     msgIndex++;
                 }
 
-                System.out.println("\nTotal messages sent: " + msgFeature.returnTotalMessages());
+               System.out.println("\nTotal messages sent: " + msgFeature.returnTotalMessages());
 
             } else if (choice == 2) {
                 System.out.println("Coming Soon.");
             } else if (choice == 3) {
                 System.out.println("Exiting application. Goodbye!");
                 running = false;
+            } else if (choice == 4) {
+                handleStoredMessagesMenu(scanner, msgFeature);
             } else {
-                System.out.println("Invalid option. Please select 1, 2, or 3.");
+                System.out.println("Invalid option. Please select 1, 2, 3, or 4.");
             }
         }
 
         scanner.close();
+    }
+
+    private static void handleStoredMessagesMenu(Scanner scanner, Message msgFeature) {
+        String[] jsonStored = msgFeature.loadStoredMessagesFromJson();
+        System.out.println("\nLoaded " + jsonStored.length + " message entry/entries from messages.json.");
+
+        boolean inStoredMenu = true;
+        while (inStoredMenu) {
+            System.out.println("\n--- STORED MESSAGES MENU ---");
+            System.out.println("1 - Display sender and recipient of all stored messages");
+            System.out.println("2 - Display the longest stored message");
+            System.out.println("3 - Search for a message ID (display recipient and message)");
+            System.out.println("4 - Search all messages sent or stored for a particular recipient");
+            System.out.println("5 - Delete a message using the message hash");
+            System.out.println("6 - Display full message report");
+            System.out.println("7 - Back to main menu");
+            System.out.println("Choose an option:");
+
+            int subChoice = readInt(scanner);
+
+            switch (subChoice) {
+                case 1:
+                    System.out.println("\n" + msgFeature.getStoredSendersAndRecipients());
+                    break;
+                case 2:
+                    System.out.println("\nLongest stored message: " + msgFeature.getLongestStoredMessage());
+                    break;
+                case 3:
+                    System.out.print("Enter Message ID to search: ");
+                    String searchId = scanner.nextLine();
+                    System.out.println(msgFeature.searchByMessageID(searchId));
+                    break;
+                case 4:
+                    System.out.print("Enter recipient number to search: ");
+                    String searchRecipient = scanner.nextLine();
+                    System.out.println(msgFeature.searchMessagesByRecipient(searchRecipient));
+                    break;
+                case 5:
+                    System.out.print("Enter Message Hash to delete: ");
+                    String targetHash = scanner.nextLine();
+                    System.out.println(msgFeature.deleteMessageByHash(targetHash));
+                    break;
+                case 6:
+                    System.out.println("\n[Message Report]");
+                    System.out.println(msgFeature.displayMessageReport());
+                    break;
+                case 7:
+                    inStoredMenu = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please select 1 to 7.");
+            }
+        }
     }
 
     private static int readInt(Scanner scanner) {
