@@ -79,11 +79,11 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals("Recipient: +27838884567 | Message: It is dinner time !", result);
     }
 
-    @Test
+   @Test
     public void testSearchMessagesByRecipient() {
         String result = msgSystem.searchMessagesByRecipient("+27838884567");
         assertEquals(
-                "Where are you? You are late! I have asked you to be on time., Ok, I am leaving without you.",
+                "Where are you? You are late! I have asked you to be on time., It is dinner time !, Ok, I am leaving without you.",
                 result
         );
     }
