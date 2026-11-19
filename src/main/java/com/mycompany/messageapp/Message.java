@@ -4,6 +4,9 @@
  */
 package com.mycompany.messageapp;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,12 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Core messaging logic for QuickChat Part 2.
- * JSON serialization helper structured with AI assistance and standard Java I/O.
- *
- * @author Student
- */
 public class Message {
 
     private final List<String> sentMessages = new ArrayList<>();
