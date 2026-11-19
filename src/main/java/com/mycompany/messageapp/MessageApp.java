@@ -77,13 +77,12 @@ public class MessageApp {
             
             //compare registred credentials to see if theymatch with entered credntials
             
-            public boolean loginUser (String username, String password){
-            if (this.registeredUsername == null || this.registeredPassword == null){
-            
-           }
-            return this.registeredUsername.equals(username) && this.registeredPassword.equals(password);
-
-        }
+            public boolean loginUser(String username, String password) {
+    if (this.registeredUsername == null || this.registeredPassword == null || username == null || password == null) {
+        return false;
+    }
+    return this.registeredUsername.equals(username) && this.registeredPassword.equals(password);
+}
 
          //Return message for login status
 public String returnLoginStatus(boolean isLoggedIn){
